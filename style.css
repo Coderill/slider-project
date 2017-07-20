@@ -1,0 +1,128 @@
+*, *::after, *::before {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.sliders {
+    max-width: 960px;
+    width: 100%;
+    height: 400px;
+    /* max-height: 385px; */
+    overflow: hidden;
+    position: relative;
+
+    margin: 100px auto 0;
+    background: radial-gradient(#78909C, #455A64);
+}
+
+.slider {
+    display: flex;
+    align-items: flex-end;
+    position: absolute;
+    left: 0;
+    max-width: 960px;
+    width: 100%;
+    height: 100%;
+	transition: left 0.25s ease-out;
+}
+
+figure {
+    flex-grow: 1;
+    min-width: 100%;
+
+    display: flex;
+    align-items: center;
+}
+
+figure img {
+    vertical-align: top;
+    padding-right: 1.5em;
+}
+
+figure figcaption {}
+
+figure figcaption h3 {
+    color: #B2DFDB;
+    font-weight: bold;
+    margin-bottom: 0.5em;
+}
+
+figure figcaption p {
+    margin-bottom: 2em;
+    color: #fff;
+}
+
+figure figcaption a {
+    display: inline-block;
+    padding: 0 1.5em;
+    background: transparent;
+    border: 1px solid #fff;
+    color: #fff;
+    line-height: 40px;
+    height: 40px;
+    margin-right: 10px;
+    text-decoration: none;
+}
+
+figure figcaption a:hover {
+    background: #fff;
+    color: #000;
+}
+
+.next::after,
+.preview::after {
+    content: '\3E';
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    width: 2em;
+    height: 2em;
+    line-height: 2em;
+    border: 1px solid #fff;
+    border-radius: 50%;
+    text-align: center;
+    transition: all 0.3s ease-in-out;
+}
+
+.preview::after {
+    content: '\3C';
+    left: 10px;
+}
+
+.next:hover::after,
+.preview:hover::after {
+    background: #fff;
+    color: #000;
+}
+
+.bubbles {
+    display: flex;
+    justify-content: center;
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 10px;;
+}
+
+.bubbles .bubble {
+    background: #fff;
+    border-radius: 50%;
+    width: 1em;
+    height: 1em;
+    margin: 3px;
+    opacity: 0.25;
+    transition: opacity 0.1s linear;
+    cursor: pointer;
+}
+
+.bubbles .bubble:hover {
+    opacity: 0.65;
+}
+
+.bubbles .bubble.active {
+    opacity: 1;
+}
